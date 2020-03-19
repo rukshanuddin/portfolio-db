@@ -1,5 +1,7 @@
 class ProjectsController < ApplicationController
-    def index
-      @projects = Project.limit(5)
-    end
+  def index; end
+
+  def show
+    @post = Post.find(params[:id])
+  end
 end
