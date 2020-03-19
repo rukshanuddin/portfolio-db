@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :projects
+  
   devise_for :users, :controllers => {
     :registrations => 'registrations',
     :omniauth_callbacks => 'callbacks'}
@@ -13,5 +13,14 @@ Rails.application.routes.draw do
     get 'logout', to: 'devise/sessions#destroy'
   end
   root to: 'pages#index'
-  
+  resources :projects do
+    collection do
+      get 'ruby'
+      get 'sinatra'
+      get 'javascript'
+      get 'rails'
+      get 'react'
+      get 'personal'
+    end
+  end  
 end
