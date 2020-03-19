@@ -1,5 +1,5 @@
 <div class="single-project-list" id=<%= project_path(project.id) %>>
-  <%= truncate(post.title, :length => 60) %>
+  <%= truncate(project.title, :length => 60) %>
   <div class="project-content">
     <div class="posted-by">Posted by <%= project.user.name %></div>
     <h3><%= project.title %></h3> 

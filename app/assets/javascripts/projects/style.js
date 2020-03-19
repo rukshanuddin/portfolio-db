@@ -17,11 +17,11 @@ $(document).on('turbolinks:load', function () {
     }
 
 
-    $('#feed').on('mouseenter', '.single-post-list', function () {
+    $('#feed').on('mouseenter', '.single-project-list', function () {
         $(this).css('border-color', randomColor());
     });
 
-    $('#feed').on('mouseleave', '.single-post-list', function () {
+    $('#feed').on('mouseleave', '.single-project-list', function () {
         $(this).css('border-color', 'rgba(0, 0 , 0, 0.05)');
     });
 
