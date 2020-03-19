@@ -9,4 +9,11 @@ module ProjectsHelper
       'shared/empty_partial'
     end
   end
+  def update_pagination_partial_path
+    if @projects.next_page
+      'projects/projects_pagination_page/update_pagination'
+    else
+      'projects/projects_pagination_page/remove_pagination'
+    end
+  end
 end
