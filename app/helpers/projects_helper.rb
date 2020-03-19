@@ -16,4 +16,7 @@ module ProjectsHelper
       'projects/projects_pagination_page/remove_pagination'
     end
   end
+  def no_projects_partial_path(projects)
+    projects.empty? ? 'projects/shared/no_projects' : 'shared/empty_partial'
+  end
 end

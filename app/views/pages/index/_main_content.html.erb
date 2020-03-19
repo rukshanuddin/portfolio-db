@@ -1,0 +1,31 @@
+<div id="main-content" class="col-sm-9">
+  <h3 class="page-name"><%= link_to 'Ruby', ruby_projects_path %></h3>
+  <div class="row">
+    <%= render @ruby_projects %>
+    <%= render no_projects_partial_path(@ruby_projects) %>
+  </div><!-- row -->
+
+  <h3 class="page-name"><%= link_to 'Sinatra', sinatra_projects_path %></h3>
+  <div class="row">
+    <%= render @sinatra_projects %>
+    <%= render no_projects_partial_path(@sinatra_projects) %>
+  </div><!-- row -->
+
+  <h3 class="page-name"><%= link_to 'Rails', rails_projects_path %></h3>
+  <div class="row">
+    <%= render @rails_projects %>
+    <%= render no_projects_partial_path(@rails_projects) %>
+  </div><!-- row -->
+
+  <h3 class="page-name"><%= link_to 'Javascript', javascript_projects_path %></h3>
+  <div class="row">
+    <%= render @javascript_projects %>
+    <%= render no_projects_partial_path(@javascript_projects) %>
+  </div>
+  
+    <h3 class="page-name"><%= link_to 'React', react_projects_path %></h3>
+  <div class="row">
+    <%= render @react_projects %>
+    <%= render no_projects_partial_path(@react_projects) %>
+  </div><!-- row --><!-- row -->
+</div><!-- main_content -->

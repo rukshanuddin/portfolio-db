@@ -1,19 +1,8 @@
-<h1>Home page</h1>
 <%= render 'projects/modal' %>
+
 <div class="container">
   <div class="row">
-    <div id="side-menu"  class="col-sm-3">
-    </div><!-- side-menu -->
-
-    <div id="main-content" class="col-sm-9">
-    <%= render @projects %>
-    </div><!-- main-content -->
-
+    <%= render 'pages/index/side_menu' %>
+    <%= render 'pages/index/main_content' %>
   </div><!-- row -->
 </div><!-- container -->
-<% if current_user %>
-<%= current_user.name %>
-<a href="./logout">Logout</a>
-<%else%>
-<%= link_to 'Sign in', new_user_session_path %>
-<%end%>
