@@ -10,7 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_19_173457) do
+ActiveRecord::Schema.define(version: 2020_03_19_200753) do
+
+  create_table "flatiron_modules", force: :cascade do |t|
+    t.string "name"
+    t.string "branch"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string "title"
+    t.string "module"
+    t.string "description"
+    t.string "github"
+    t.string "youtube"
+    t.integer "flatiron_module_id"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["flatiron_module_id"], name: "index_projects_on_flatiron_module_id"
+    t.index ["user_id"], name: "index_projects_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name", default: "", null: false

@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable
 
+  has_many :projects, class_name: 'Project', foreign_key: 'project_id', dependent: :destroy
+  has_many :flatiron_modules, through: :projects, source: :projects_table_foreign_key_to_flatiron_modules_table
+  
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.provider = auth.provider
