@@ -5,6 +5,8 @@ class Project < ApplicationRecord
 
   belongs_to :user
   belongs_to :flatiron_module
+  has_many :comments
+  
 
   default_scope -> { includes(:user).order(created_at: :desc) }
 

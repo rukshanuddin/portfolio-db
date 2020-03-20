@@ -1,10 +1,13 @@
 class ProjectsController < ApplicationController
   before_action :redirect_if_not_signed_in, only: [:new]
-  
+
   def index; end
 
   def show
     @project = Project.find(params[:id])
+    if user_signed_in?
+      @message_has_been_sent = conversation_exist?
+    end
   end
 
   def new
@@ -35,10 +38,14 @@ class ProjectsController < ApplicationController
     end
   end
 
+  
   private 
   
     def project_params
       params.require(:project).permit(:description, :title, :flatiron_module_id)
                               .merge(user_id: current_user.id)
+    end
+    def conversation_exist?
+      Comment.between_users(current_user.id, @project.user.id).present?
     end
 end
