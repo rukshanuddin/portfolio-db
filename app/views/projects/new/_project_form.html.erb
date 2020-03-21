@@ -12,7 +12,7 @@
                   required: true, 
                   minlength: 20,
                   maxlength: 1000,
-                  placeholder: 'Describe what you are looking for. E.g. specific interests, expertise level, etc.', 
+                  placeholder: 'Describe what your project does, what methods you used, the languages, technologies incorporated  etc.', 
                   class: 'form-control' %>
   <%= f.collection_select :flatiron_module_id, @flatiron_modules, :id, :name, class: 'form-control' %>
   <%= f.submit "Create a project", class: 'form-control' %>

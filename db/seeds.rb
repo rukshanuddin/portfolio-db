@@ -25,7 +25,7 @@
       Project.create(
         title: Faker::Lorem.sentences[0],
         description: Faker::Lorem.sentences[0],
-        user_id: 1, 
+        user_id: 1,
         flatiron_module_id: flatiron_module.id
       )
     end
