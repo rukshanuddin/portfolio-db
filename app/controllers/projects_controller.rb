@@ -7,7 +7,10 @@ class ProjectsController < ApplicationController
       @message_has_been_sent = conversation_exist?
     end
   end
-
+  def index
+    @projects = Project.all
+    render 'projects'
+  end
   def new
     @branch = params[:branch]
     @flatiron_modules = FlatironModule.where(branch: @branch)
