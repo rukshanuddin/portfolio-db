@@ -2,13 +2,13 @@
   <div class="row">
     <h1 class="page-title"><%= page_title %></h1>
     <%= render 'projects/branch/create_new_project', branch: branch %>
-  </div><!-- row -->
+  </div>
 
   <div class="row">
     <%= render  'projects/branch/search_form', 
                 branch: branch,
                 search_placeholder: search_placeholder %>
-  </div><!-- row -->
+  </div>
 
   <div class="row">
     <%= render 'projects/branch/flatiron_modules', branch: branch %>
@@ -19,7 +19,7 @@
       <%= render @projects %>
       <%= render no_projects_partial_path(@projects) %>			
     </div>
-  </div><!-- row -->	
+  </div>	
   
   <div class="infinite-scroll">
     <%= will_paginate @projects %>
