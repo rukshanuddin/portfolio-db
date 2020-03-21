@@ -5,8 +5,10 @@ ruby '2.6.3'
 
 gem 'devise'
 gem 'dotenv-rails'
+gem 'faker'
 gem 'omniauth'
 gem 'omniauth-github'
+gem 'will_paginate', '~> 3.1.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 # Use sqlite3 as the database for Active Record
@@ -17,6 +19,7 @@ gem 'puma', '~> 4.1'
 gem 'bootstrap_form'
 gem 'bootstrap-sass'
 gem 'sass-rails', '>= 6'
+gem 'gon'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 4.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -53,6 +56,12 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
+  gem 'rspec-rails', '~> 3.6'
+  gem 'factory_girl_rails'
+  gem 'rails-controller-testing'
+  gem 'headless'
+  gem 'poltergeist'
+  gem 'database_cleaner'  
   gem 'webdrivers'
 end
 

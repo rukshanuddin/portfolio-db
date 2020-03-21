@@ -5,16 +5,15 @@ class ProjectsForBranchService
     @branch = params[:branch]
   end
 
-  # get posts depending on the request
   def call
     if @flatiron_module.blank? && @search.blank?
-      projects = Post.by_branch(@branch).all
+      projects = Project.by_branch(@branch).all
     elsif @flatiron_module.blank? && @search.present?
-      projects = Post.by_branch(@branch).search(@search)
+      projects = Project.by_branch(@branch).search(@search)
     elsif @flatiron_module.present? && @search.blank?
-      projects = Post.by_category(@branch, @flatiron_module)
+      projects = Project.by_flatiron_module(@branch, @flatiron_module)
     elsif @flatiron_module.present? && @search.present?
-      projects = Post.by_category(@branch, @flatiron_module).search(@search)
+      projects = Project.by_flatiron_module(@branch, @flatiron_module).search(@search)
     else
     end
   end

@@ -5,9 +5,9 @@
                branch_path_name: branch_path_name %>
     <% @flatiron_modules.each do |flatiron_module| %>
       <li class="flatiron_module-item">
-        <%= link_to flatiron_module.name, 
-                    send(branch_path_name, flatiron_module: flatiron_module.name), 
-                    :class => ("selected-item" if params[:flatiron_module] == flatiron_module.name) %>
+        <%= link_to flatiron_module.branch, 
+                    send(branch_path_name, flatiron_module: flatiron_module.branch), 
+                    :class => ("selected-item" if params[:flatiron_module] == flatiron_module.branch) %>
       </li>
     <% end %>
   </ul>

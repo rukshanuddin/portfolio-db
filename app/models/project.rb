@@ -19,6 +19,6 @@ class Project < ApplicationRecord
   end
 
   scope :search, -> (search) do
-    where("title ILIKE lower(?) OR content ILIKE lower(?)", "%#{search}%", "%#{search}%")
+    where("title LIKE lower(?) OR description LIKE lower(?)", "%#{search}%", "%#{search}%")
   end
 end

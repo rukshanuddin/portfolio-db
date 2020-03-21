@@ -1,5 +1,4 @@
 $(document).on('turbolinks:load', function () {
-    // when a post is clicked, show its full content in a modal window
     $("body").on("click", ".single-project-card, .single-project-list", function () {
         var posted_by = $(this).find('.project-content .posted-by').html();
         var project_heading = $(this).find('.project-content h3').html();
