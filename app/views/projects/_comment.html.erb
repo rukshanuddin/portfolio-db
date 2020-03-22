@@ -1,7 +1,13 @@
-<div>
-  <h4>Comment by <%= comment.author_name %></h4>
-  <% if comment.created_at != nil  %>  
-<p>Posted <%= distance_of_time_in_words(comment.project.created_at, comment.created_at) %> later</p>
-<% end %>
-  <p class="comment"><%= comment.body %></p>
+<div class="panel-group">
+  <div class="panel panel-info">
+    <div class="panel-body">
+    <h4><%= comment.author_name %></h4>
+      <% if comment.created_at != nil  %>  
+       posted <%= distance_of_time_in_words(comment.project.created_at, comment.created_at) %> later
+       <br><%= comment.body %></div>
+      <% end %>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-body"></div>
+  </div>
 </div>
