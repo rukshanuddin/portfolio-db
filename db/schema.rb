@@ -10,21 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_20_000022) do
+ActiveRecord::Schema.define(version: 2020_03_21_032943) do
 
   create_table "comments", force: :cascade do |t|
+    t.string "author_name"
     t.text "body"
-    t.integer "sender_id"
-    t.integer "recipient_id"
-    t.integer "user_id"
-    t.integer "project_id"
+    t.integer "project_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["project_id"], name: "index_comments_on_project_id"
-    t.index ["recipient_id", "sender_id"], name: "index_comments_on_recipient_id_and_sender_id", unique: true
-    t.index ["recipient_id"], name: "index_comments_on_recipient_id"
-    t.index ["sender_id"], name: "index_comments_on_sender_id"
-    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "flatiron_modules", force: :cascade do |t|
@@ -63,5 +57,5 @@ ActiveRecord::Schema.define(version: 2020_03_20_000022) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "comments", "users"
+  add_foreign_key "comments", "projects"
 end

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     get 'signup', to: 'devise/registrations#new'
   end
   devise_scope :user do
-    get 'logout', to: 'devise/sessions#destroy'
+    delete 'logout', to: 'devise/sessions#destroy'
   end
   root to: 'pages#index'
   resources :projects do
@@ -22,5 +22,6 @@ Rails.application.routes.draw do
       get 'react'
       get 'personal'
     end
+    resources :comments
   end  
 end

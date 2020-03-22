@@ -2,7 +2,10 @@ class ProjectsController < ApplicationController
   before_action :redirect_if_not_signed_in, only: [:new]
 
   def show
+    @comment = Comment.new
+    
     @project = Project.find(params[:id])
+    @comment.project_id = @project.id
     if user_signed_in?
       @message_has_been_sent = conversation_exist?
     end

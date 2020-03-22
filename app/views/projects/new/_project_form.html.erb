@@ -5,8 +5,8 @@
                     class: 'form-control',
                     required: true, 
                     minlength: 5,
-                    maxlength: 100 %>
-  <%= f.hidden_field :branch, :value => @branch %>
+                    maxlength: 100 %>                                    
+  <%= f.hidden_field :branch, :value => @branch %>    
   <%= f.text_area :description, 
                   rows: 6,
                   required: true, 
@@ -14,6 +14,16 @@
                   maxlength: 1000,
                   placeholder: 'Describe what your project does, what methods you used, the languages, technologies incorporated  etc.', 
                   class: 'form-control' %>
+  <%= f.text_field  :github, 
+                    placeholder: 'Link to GitHub repository', 
+                    class: 'form-control',
+                    required: false, 
+                    minlength: 5%>
+  <%= f.text_field  :youtube, 
+                    placeholder: 'Link to Youtube video demo/walkthrough', 
+                    class: 'form-control',
+                    required: false, 
+                    minlength: 5%>  
   <%= f.collection_select :flatiron_module_id, @flatiron_modules, :id, :name, class: 'form-control' %>
   <%= f.submit "Create a project", class: 'form-control' %>
 <% end %>
