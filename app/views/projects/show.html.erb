@@ -1,15 +1,27 @@
 <div id="single-project-content" class="container">
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
-      <div class="posted-by">Posted by <%= @project.user.name %></div>
-      <h3><%= @project.title %></h3>
-      <p><%= @project.description %></p>
-      <%if current_user%>
-      <%= render partial: 'comments/form' %>
+      
+      <div class="page-name" >
+        <h2><%= @project.title %></h2>
+      </div>
+      <div class="posted-by">
+      Deveopled by: <%= @project.user.name %>
+      </div>
+      <div class="project-text">
+        <h4><%= @project.description %></h4>
+        <p><%=@project.github%>
+           <br>
+           <%=@project.youtube%>
+        </p>
+      </div>
+      <%if current_user %>
+        <%= render partial: 'comments/form' %>
       <%end%>
-      <h3>Comments (<%= @project.comments.size %>)</h3>
+      <div class="page-name">
+        <h3>Comments (<%= @project.comments.size %>)</h3>
+      </div>
       <%= render partial: 'projects/comment', collection: @project.comments.reverse %>
     </div>
   </div>
 </div>
-<%=console%>

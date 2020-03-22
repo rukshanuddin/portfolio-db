@@ -5,5 +5,6 @@ class PagesController < ApplicationController
     @rails_projects = Project.by_branch('rails').limit(8)
     @javascript_projects = Project.by_branch('javascript').limit(8)
     @react_projects = Project.by_branch('react').limit(8)
+    @personal_projects = Project.by_branch('personal').limit(8)
   end
 end

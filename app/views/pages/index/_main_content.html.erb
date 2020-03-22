@@ -28,4 +28,10 @@
     <%= render @react_projects %>
     <%= render no_projects_partial_path(@react_projects) %>
   </div>
+
+    <h3 class="page-name"><%= link_to 'Personal', personal_projects_path %></h3>
+  <div class="row">
+    <%= render @personal_projects %>
+    <%= render no_projects_partial_path(@personal_projects) %>
+  </div>
 </div>

@@ -16,7 +16,11 @@ class ProjectsController < ApplicationController
   end
   def new
     @branch = params[:branch]
-    @flatiron_modules = FlatironModule.where(branch: @branch)
+    if @branch
+      @flatiron_modules = FlatironModule.where(branch: @branch)
+    else
+      @flatiron_modules = FlatironModule.all.uniq
+    end
     @project = Project.new
   end
 
@@ -47,6 +51,10 @@ class ProjectsController < ApplicationController
   end
 
   def react
+    projects_for_branch(params[:action])
+  end
+
+  def personal
     projects_for_branch(params[:action])
   end
   private
