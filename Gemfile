@@ -18,6 +18,7 @@ gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
 gem 'bootstrap_form'
 gem 'bootstrap-sass'
+gem 'devise-bootstrap-views', '~> 1.0'
 gem 'sass-rails', '>= 6'
 gem 'gon'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker

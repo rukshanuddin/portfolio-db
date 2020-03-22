@@ -12,14 +12,6 @@
       password_confirmation: '123456'
     )
 
-
-    FlatironModule.create(branch: 'ruby', name: 'ruby')
-    FlatironModule.create(branch: 'sinatra', name: 'sinatra')
-    FlatironModule.create(branch: 'rails', name: 'rails')
-    FlatironModule.create(branch: 'javascript', name: 'javascript')
-    FlatironModule.create(branch: 'react', name: 'react')
-
-
   FlatironModule.all.each do |flatiron_module|
     5.times do
       Project.create(
