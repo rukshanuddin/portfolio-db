@@ -3,7 +3,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :omniauthable
   has_many :projects, class_name: 'Project', foreign_key: 'user_id', dependent: :destroy
   has_many :flatiron_modules, through: :projects, source: :projects_table_foreign_key_to_flatiron_modules_table
-  validates :name, :email, presence: true 
+  has_many :comments, through: :projects
+  validates :name, :email, presence: true
   validates :name, :email, uniqueness: true
 
   def self.from_omniauth(auth)
