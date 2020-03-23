@@ -1,5 +1,3 @@
-<h3>Post a Comment</h3>
-
 <%= bootstrap_form_for [@project, @comment] do |f| %>
   <%= f.hidden_field :author_name, :value => current_user.name %>
   <%= f.text_area :body, 

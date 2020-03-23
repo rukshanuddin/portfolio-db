@@ -18,10 +18,11 @@
         </p>
       </div></div>
       <%if current_user %>
+        <h3><%= link_to 'Post a Comment', new_project_comment_path(@project) %></h3>
         <%= render partial: 'comments/form' %>
       <%end%>
       <div class="page-name">
-        <h3>Comments (<%= @project.comments.size %>)</h3>
+        <h3><%= link_to 'Comments', project_comments_path(@project) %> (<%= @project.comments.size %>)</h3>
       </div>
       <%= render partial: 'projects/comment', collection: @project.comments.reverse %>
     </div>
