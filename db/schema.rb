@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(version: 2020_03_21_032943) do
     t.string "description"
     t.string "github"
     t.string "youtube"
-    t.integer "flatiron_module_id"
-    t.integer "user_id"
+    t.integer "flatiron_module_id", null: false
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["flatiron_module_id"], name: "index_projects_on_flatiron_module_id"
@@ -49,13 +49,18 @@ ActiveRecord::Schema.define(version: 2020_03_21_032943) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.integer "project_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "provider"
     t.string "uid"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["project_id"], name: "index_users_on_project_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "comments", "projects"
+  add_foreign_key "projects", "flatiron_modules"
+  add_foreign_key "projects", "users"
+  add_foreign_key "users", "projects"
 end

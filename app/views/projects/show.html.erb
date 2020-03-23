@@ -12,11 +12,13 @@
         </div>
         <div class="project-text">
           <%= @project.description %>
-          <p><%=@project.github%>
-             <br>
-             <%=@project.youtube%>
+          <p>
+            <a href='<%=@project.github%>' target="_blank">Link to repository</a>
+            <br>
+            <a href='<%=@project.youtube%>' target="_blank">Link to walkthrough</a>
           </p>
         </div>
+        <iframe width="523" height="315" src="<%=@project.youtube%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
         <%if current_user %>
           <div class="page-name">
