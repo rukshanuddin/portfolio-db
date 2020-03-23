@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  # Comments Controller
   def create
     @comment = Comment.new(comment_params)
     @comment.project_id = params[:project_id]
@@ -19,5 +20,4 @@ class CommentsController < ApplicationController
     @project = Project.find_by_id(params[:project_id])
     render 'show'
   end
-
 end

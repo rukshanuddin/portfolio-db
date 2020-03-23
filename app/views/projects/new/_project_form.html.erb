@@ -18,12 +18,12 @@
                     placeholder: 'Link to GitHub repository', 
                     class: 'form-control',
                     required: false, 
-                    minlength: 5%>
+                    minlength: 10%>
   <%= f.text_field  :youtube, 
                     placeholder: 'Link to Youtube video demo/walkthrough', 
                     class: 'form-control',
                     required: false, 
-                    minlength: 5%>  
+                    minlength: 11%>  
   <%= f.collection_select :flatiron_module_id, @flatiron_modules, :id, :name, class: 'form-control' %>
   <%= f.submit "Create a project", class: 'form-control' %>
 <% end %>

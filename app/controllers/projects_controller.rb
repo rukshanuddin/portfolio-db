@@ -69,14 +69,14 @@ class ProjectsController < ApplicationController
 
   def projects_for_branch(branch)
     @flatiron_modules = FlatironModule.where(branch: branch)
-    @projects = get_projects.paginate(page: params[:page])
+    @projects = retrieve_projects.paginate(page: params[:page])
     respond_to do |format|
       format.html
       format.js { render partial: 'projects/projects_pagination_page' }
     end
   end
 
-  def get_projects
+  def retrieve_projects
     ProjectsForBranchService.new(
       { search: params[:search],
         flatiron_module: params[:flatiron_module],

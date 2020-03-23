@@ -5,15 +5,16 @@ class Project < ApplicationRecord
   belongs_to :user
   belongs_to :flatiron_module
   has_many :comments
+  has_many :flatiron_modules
 
   default_scope -> { includes(:user).order(created_at: :desc) }
 
-  scope :by_flatiron_module, ->(branch, flatiron_module_name) do 
-    joins(:flatiron_module).where(flatiron_modules: {name: flatiron_module_name, branch: branch})
+  scope :by_flatiron_module, ->(branch, flatiron_module_name) do
+    joins(:flatiron_module).where(flatiron_modules: { name: flatiron_module_name, branch: branch })
   end
 
   scope :by_branch, ->(branch) do
-    joins(:flatiron_module).where(flatiron_modules: {branch: branch})
+    joins(:flatiron_module).where(flatiron_modules: { branch: branch })
   end
 
   scope :search, ->(search) do

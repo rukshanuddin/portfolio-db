@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  # Devise generated User class
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable
   has_many :projects, class_name: 'Project', foreign_key: 'user_id', dependent: :destroy
