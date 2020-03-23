@@ -1,5 +1,5 @@
 class Comment < ApplicationRecord
-  # Comment class, belongs_to
+  # Comment class, belongs_to Project, has_many Users through Projects
   belongs_to :project
   validates :body, presence: true
   validates :author_name, presence: true
