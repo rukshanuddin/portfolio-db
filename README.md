@@ -3,7 +3,7 @@
 Specs:
 
 - [x] Using Ruby on Rails for the project
-**Self explanatory, using Rails as project framework.**
+- **Self explanatory, using Rails as project framework.**
 - [x] Include at least one has_many relationship
 **User has_many projects, Project has_many comments**
 - [x] Include at least one belongs_to relationship (x belongs_to y; e.g. Post belongs_to User)
