@@ -3,17 +3,16 @@ class ProjectsController < ApplicationController
 
   def show
     @comment = Comment.new
-    
     @project = Project.find(params[:id])
+    @flatiron_module = @project.flatiron_module
     @comment.project_id = @project.id
-    if user_signed_in?
-      @message_has_been_sent = conversation_exist?
-    end
   end
+
   def index
     @projects = Project.all
     render 'projects'
   end
+
   def new
     @branch = params[:branch]
     if @branch
@@ -26,13 +25,12 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-    if @project.save 
-      redirect_to project_path(@project) 
+    if @project.save
+      redirect_to project_path(@project)
     else
       redirect_to root_path
     end
   end
-
 
   def rails
     projects_for_branch(params[:action])
@@ -57,6 +55,7 @@ class ProjectsController < ApplicationController
   def personal
     projects_for_branch(params[:action])
   end
+
   private
 
   def conversation_exist?
@@ -65,7 +64,7 @@ class ProjectsController < ApplicationController
 
   def project_params
     params.require(:project).permit(:description, :title, :flatiron_module_id)
-                         .merge(user_id: current_user.id)
+          .merge(user_id: current_user.id)
   end
 
   def projects_for_branch(branch)
@@ -78,11 +77,10 @@ class ProjectsController < ApplicationController
   end
 
   def get_projects
-    ProjectsForBranchService.new({
-      search: params[:search],
-      flatiron_module: params[:flatiron_module],
-      branch: params[:action]
-    }).call
+    ProjectsForBranchService.new(
+      { search: params[:search],
+        flatiron_module: params[:flatiron_module],
+        branch: params[:action] }
+    ).call
   end
-
 end
