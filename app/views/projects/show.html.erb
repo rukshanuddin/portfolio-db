@@ -1,20 +1,22 @@
 <div id="single-project-content" class="container">
   <div class="row">
+  <br>
     <div class="col-sm-6 col-sm-offset-3">
-      
+      <div class="panel panel-info panel-body">
       <div class="page-name" >
         <h2><%= @project.title %></h2>
+        <h4><%= @flatiron_module.name%></h4>
       </div>
       <div class="posted-by">
-      Deveopled by: <%= @project.user.name %>
+      Developed by: <%= @project.user.name %>
       </div>
       <div class="project-text">
-        <h4><%= @project.description %></h4>
+        <%= @project.description %>
         <p><%=@project.github%>
            <br>
            <%=@project.youtube%>
         </p>
-      </div>
+      </div></div>
       <%if current_user %>
         <%= render partial: 'comments/form' %>
       <%end%>
