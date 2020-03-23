@@ -7,7 +7,9 @@ html {
 }
 
 body {
-    background: $backgroundColor;
+    background-image: url(https://downloader.disk.yandex.ru/preview/5aec3974c1e4e69bd01e0cd5a059f93748e9f859eae312f3016d8cc9b080ea8d/5e785e7a/QUhtVSgtKd4hll9delI9jXzu3jxTGn1FAYF5RJSyHhEw14wbyZ0lqX6qMyMnhYDBvZSqTNp2RlCDt5ZaWLtbJQ==?uid=0&filename=CkzASMsefyLD.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&tknv=v2&owner_uid=996005009&size=1920x968);
+    background-repeat: no-repeat;
+    background-size: cover;
     font-size: 14px;
     font-size: 1.4rem;
 }

@@ -6,8 +6,8 @@ class CreateProjects < ActiveRecord::Migration[6.0]
       t.string :description
       t.string :github
       t.string :youtube
-      t.belongs_to :flatiron_module, index: true
-      t.belongs_to :user, index: true
+      t.references :flatiron_module, null: false, foreign_key: true
+      t.references :project, null: false, foreign_key: true
       t.timestamps
     end
   end

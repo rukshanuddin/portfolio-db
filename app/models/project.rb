@@ -2,7 +2,6 @@ class Project < ApplicationRecord
   validates :title, presence: true, length: { minimum: 5, maximum: 255 }
   validates :description, presence: true, length: { minimum: 20, maximum: 1000 }
   validates :flatiron_module_id, presence: true
-
   belongs_to :user
   belongs_to :flatiron_module
   has_many :comments
