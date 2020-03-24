@@ -1,3 +1,4 @@
+# Migrations for Projects
 class CreateProjects < ActiveRecord::Migration[6.0]
   def change
     create_table :projects do |t|

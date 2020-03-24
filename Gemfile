@@ -3,9 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 
+# Devise for authentication and other required gems
 gem 'devise'
 gem 'dotenv-rails'
-gem 'faker'
 gem 'omniauth'
 gem 'omniauth-github'
 gem 'will_paginate', '~> 3.1.0'
