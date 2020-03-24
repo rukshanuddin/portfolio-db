@@ -18,7 +18,7 @@
         font-size: 2rem;
     }
 
-    .new-post-button-parent {
+    .new-project-button-parent {
         text-align: center;
 
         span {
@@ -26,7 +26,7 @@
         }
     }
 
-    .post-button {
+    .project-button {
         padding: 5px;
     }
 
@@ -38,6 +38,7 @@
 }
 
 @media screen and (max-width: 767px) {
+
     .col-sm-10 {
         display: none;
         padding: 0 !important;
@@ -67,7 +68,7 @@
         display: none !important;
     }
 
-    .single-post-list {
+    .single-project-list {
         min-height: 65px;
         max-height: 65px;
         padding: 10px 0;
@@ -80,10 +81,6 @@
 
     .smaller-screen-link {
         padding: 10px 20px !important;
-    }
-
-    .conversation-window {
-        display: none !important;
     }
 
     .navbar-brand {
@@ -114,38 +111,6 @@
         }
     }
 
-    .navbar-header {
-
-        #conversations-menu,
-        #messages-page-name {
-            a {
-                float: left;
-            }
-
-            ul {
-                position: absolute;
-                left: 0;
-                width: 100%;
-            }
-        }
-
-        #conversations-menu {
-            width: 40%;
-        }
-
-        #messages-page-name {
-            width: 50%;
-        }
-
-        #contacts-requests {
-            ul {
-                position: absolute;
-                left: 0;
-                width: 100%;
-            }
-        }
-    }
-
     #side-menu {
         display: none !important;
     }
@@ -160,12 +125,53 @@
         width: 100% !important;
     }
 }
+@media screen and (min-width: 767px) {
 
+    ::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        background-color: #F5F5F5;
+    }
+
+    ::-webkit-scrollbar {
+        width: 12px;
+        background-color: #F5F5F5;
+    }
+
+    ::-webkit-scrollbar-thumb {
+
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        background-color: $navbarColor;
+    }
+
+    body nav {
+        display: initial !important;
+    }
+
+    .smaller-screen-link {
+        display: none !important;
+    }
+
+    .brand-mobile {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: none !important;
+    }
+
+    #conversations-menu,
+    #contacts-requests {
+        ul {
+            width: 400px;
+            top: 0;
+        }
+    }
+}
 @media screen and (max-width: 1000px) {
 
     .solid-color-mode,
     .border-color-mode {
-        .post-text {
+        .project-text {
             font-size: 16px;
         }
     }
