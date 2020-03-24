@@ -1,3 +1,4 @@
+# Controller for all Project views
 class ProjectsController < ApplicationController
   before_action :redirect_if_not_signed_in, only: [:new]
 

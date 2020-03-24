@@ -1,5 +1,5 @@
+# Comments Controller
 class CommentsController < ApplicationController
-  # Comments Controller
   def create
     @comment = Comment.new(comment_params)
     @comment.project_id = params[:project_id]

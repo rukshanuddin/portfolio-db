@@ -1,3 +1,4 @@
+# Root page controller
 class PagesController < ApplicationController
   def index
     @ruby_projects = Project.by_branch('ruby').limit(8)

@@ -1,3 +1,4 @@
+# Controller for devise registrations
 class RegistrationsController < Devise::RegistrationsController
   private
 
