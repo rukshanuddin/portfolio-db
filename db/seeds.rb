@@ -1,4 +1,3 @@
-
 User.create(
   name: 'Avi Flombaum',
   email: 'avi@flatironschool.com',
@@ -61,7 +60,6 @@ FlatironModule.create(branch: 'javascript', name: 'Javascript')
 FlatironModule.create(branch: 'react', name: 'React')
 FlatironModule.create(branch: 'personal', name: 'Personal')
 
-my_modules = %w[Ruby Sinatra Rails Javascript React Personal]
 project_names = [
   'Basecamp', 'mruby', 'streem', 'Ruby on Rails', 'Abiquo', 'AdaControl',
   'Berkeley DB', 'Cloudify', 'Docker', 'db4o', 'Elasticsearch', 'EyeOS',
@@ -73,23 +71,24 @@ project_names = [
 description_filler = [
   'Open-source BI solution for corporate performance management and OLAP-based planning, analysis, consolidation and reporting.',
   'Business intelligence, data mining, data integration, analytics, reporting, and dashboards',
-  'HTML5 mobile app framework','Enterprise server and client Linux distribution',
+  'HTML5 mobile app framework', 'Enterprise server and client Linux distribution',
   'Framework for building CRM/ERP web applications, Business Information Manager (BIM)',
-  'Source-code controller and coding standard checker for Ada',
-  'Enterprise content management, web content management', 'Web Content Management System',
-  'Database front-end applications generator','JAX-WS 2.0 service-enablement framework',
-  'DHCP client/server/relay software',
-  'Data mining software written in Java, fully integrating Weka, featuring 350+ operators for preprocessing, machine learning, visualization, etc. – the previous version is available as open-source',
+  'Source-code controller and coding standard checker for Adafruti Technobabble',
+  'Enterprise content management, web content management, Web Content Management System',
+  'Database front-end applications generator', 'JAX-WS 2.0 service-enablement framework',
+  'DHCP client/server/relay software', 'Punk rock DB solution built on Ramones',
+  'Data mining software written in Java, fully integrating Weka, featuring 350+',
+  'Operators for preprocessing, machine learning, visualization the previous version is available as open-source',
   'Quantum chemical and molecular dynamics software, efficient simulation of large systems involving millions of atoms',
   'A web application framework', 'The most popular web server', 'Log file parser and analyzer',
-  "Tool for browsers", "Fast, feature-rich HTTP server", 'Powerful HTTP/HTTPS/FTP/FTPS loading and testing tool',
-  'FileZilla - FTP', 'Secure, high performance, and easy-to-configure HTTP server',
-  'HTTP File Server – ', 'User-friendly file server software, with a drag-and-drop interface',
+  'Tool for browsers. Fast, feature-rich HTTP server', 'Powerful HTTP/HTTPS/FTP/FTPS loading and testing tool',
+  'FileZilla - FTP Secure, high performance, and easy-to-configure HTTP server',
+  'HTTP File Server', 'User-friendly file server software, with a drag-and-drop',
   'lighttpd – Resource-sparing, but also fast and full-featured, HTTP Server',
   'CFML application server', 'Lightweight, high performance web server/reverse proxy and e-mail (IMAP/POP3) proxy',
   'Internet application server', 'Qcodo – PHP5 framework', 'Squid (software) – Web proxy cache',
   'Fast, Java-based framework for creating web applications', 'High-performance web application',
-  'accelerator/reverse proxy and load balancer/HTTP router',
+  'accelerator/reverse proxy and load balancer/HTTP router interface',
   'XAMPP – Package of web applications including Apache and MariaDB',
   'Zope – Web application server'
 ]

@@ -15,9 +15,10 @@ Specs:
 **User has_many Comment through Project, Comment has_many Users through Project**
 - [x] The "through" part of the has_many through includes at least one user submittable attribute, that is to say, some attribute other than its foreign keys that can be submitted by the app's user (attribute_name e.g. ingredients.quantity)
 **User has_many Comments through Projects, comments have user submittable :body**
-- [ ] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
+- [x] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
+**User, Project, Comment**
 - [x] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. **User.most_recipes URL: /users/most_recipes)**
-**c**
+**Project class includes**
 - [x] Include signup
 **signup_path to devise/registrations#new**
 - [x] Include login
@@ -35,7 +36,7 @@ Specs:
 
 Confirm:
 
-- [ ] The application is pretty DRY
-- [ ] Limited logic in controllers
-- [ ] Views use helper methods if appropriate
-- [ ] Views use partials if appropriate
+- [x] The application is pretty DRY
+- [x] Limited logic in controllers
+- [x] Views use helper methods if appropriate
+- [x] Views use partials if appropriate
