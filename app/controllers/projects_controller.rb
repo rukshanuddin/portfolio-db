@@ -63,7 +63,8 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:description, :title, :flatiron_module_id)
+    params.require(:project)
+          .permit(:description, :title, :flatiron_module_id, :github, :youtube)
           .merge(user_id: current_user.id)
   end
 
