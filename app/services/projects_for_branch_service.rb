@@ -8,7 +8,7 @@ class ProjectsForBranchService
   def call
     if @flatiron_module.blank? && @search.blank?
       projects = Project.by_branch(@branch).all
-    else @flatiron_module.blank? && @search.present?
+    elsif @flatiron_module.blank? && @search.present?
       projects = Project.by_branch(@branch).search(@search)
     end
   end
