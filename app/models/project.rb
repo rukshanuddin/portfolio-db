@@ -7,7 +7,7 @@ class Project < ApplicationRecord
   has_many :comments
   has_many :flatiron_modules
 
-  default_scope -> { includes(:user).order(created_at: :desc) }
+  #default_scope -> { includes(:user).order(created_at: :desc) }
 
   scope :by_flatiron_module, ->(branch, flatiron_module_name) do
     joins(:flatiron_module).where(flatiron_modules: { name: flatiron_module_name, branch: branch })
@@ -19,5 +19,9 @@ class Project < ApplicationRecord
 
   scope :search, ->(search) do
     where('title LIKE lower(?) OR description LIKE lower(?)', "%#{search}%", "%#{search}%")
+  end
+
+  scope :alphabetize, -> do
+    order(:title)
   end
 end
