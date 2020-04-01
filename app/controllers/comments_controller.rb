@@ -1,5 +1,7 @@
 # Comments Controller
 class CommentsController < ApplicationController
+  before_action :get_project, only: [:new, :index]
+
   def create
     @comment = Comment.new(comment_params)
     @comment.project_id = params[:project_id]
@@ -12,12 +14,16 @@ class CommentsController < ApplicationController
   end
 
   def new
-    @project = Project.find_by_id(params[:project_id])
     @comment = Comment.new
   end
 
   def index
-    @project = Project.find_by_id(params[:project_id])
     render 'show'
+  end
+
+  private
+
+  def get_project
+    @project = Project.find_by_id(params[:project_id])
   end
 end

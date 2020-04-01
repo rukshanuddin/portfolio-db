@@ -1,6 +1,9 @@
 # Controller for all Project views
 class ProjectsController < ApplicationController
   before_action :redirect_if_not_signed_in, only: [:new]
+  before_action only: [:rails, :ruby, :react, :sinatra, :personal, :javascript] do
+    projects_for_branch(params[:action])
+  end
 
   def show
     @comment = Comment.new
@@ -10,7 +13,7 @@ class ProjectsController < ApplicationController
   end
 
   def index
-    @projects = Project.all
+    @projects = Project.alphabetize
     render 'projects'
   end
 
@@ -34,27 +37,21 @@ class ProjectsController < ApplicationController
   end
 
   def rails
-    projects_for_branch(params[:action])
   end
 
   def sinatra
-    projects_for_branch(params[:action])
   end
 
   def ruby
-    projects_for_branch(params[:action])
   end
 
   def javascript
-    projects_for_branch(params[:action])
   end
 
   def react
-    projects_for_branch(params[:action])
   end
 
   def personal
-    projects_for_branch(params[:action])
   end
 
   private
